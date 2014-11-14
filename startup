@@ -1,0 +1,5 @@
+local version = "1.0a"
+function draw()
+  term.clear()
+  term.setCursorPos(1,1)
+  print("TheNewOS ")
