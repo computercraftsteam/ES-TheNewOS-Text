@@ -1,3 +1,9 @@
+--[[
+TheNewOS Text by ComputerCraft'sTeam
+(C)2014 manumanucraft
+This is not affiliated with ComputerCraft (computercraft.info)
+Setup pastebin code: C9WSrRv1
+]]--
 local function get(repoFile,saveTo)
 local download = http.get("https://raw.github.com/myName/repo/repoFile") --This will make 'download' hold the contents of the file.
 if download then --checks if download returned true or false
@@ -18,4 +24,4 @@ term.setCursorPos(1,1)
 print("Instalador TheNewOS Text")
 print("Copyright (C) 2014 manumanucraft")
 print("================================")
-print("Main setup file downloaded and opened")
+print("Descargado y abierto el archivo /setup")
