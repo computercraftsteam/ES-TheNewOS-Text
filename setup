@@ -1,0 +1,14 @@
+function downlad(url,path)
+a = http.get(url)
+b = a.readAll()
+c = fs.open(path,"w")
+c:write(b)
+c:close()
+end
+function gbDownload(user,repo,branch,path,file)
+url = "http://raw.githubusercontent.com/"..user.."/"..repo.."/"..branch.."/"..path.."/"..file
+download(url,file)
+end
+function gDownload(path,file)
+gbDownload("computercraftsteam","ES-TheNewOS-Text","release",path,file)
+end
