@@ -12,3 +12,4 @@ end
 function gDownload(path,file)
 gbDownload("computercraftsteam","ES-TheNewOS-Text","release",path,file)
 end
+print("Setup!")
