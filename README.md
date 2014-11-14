@@ -1,4 +1,4 @@
-ES-ManuOS-Text
+ES-TheNewOS-Text
 ==============
 
 SO para ComputerCraft 1.65
