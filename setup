@@ -2,13 +2,13 @@
 TheNewOS Text by ComputerCraft'sTeam
 Setup pastebin code: C9WSrRv1
 ]]--
-local function get(repoFile,saveTo)
-local download = http.get("https://raw.github.com/computercraftsteam/ES-TheNewOS-Text/release/"..repoFile) --This will make 'download' hold the contents of the file.
+local function get(file,path)
+local download = http.get("https://raw.github.com/computercraftsteam/ES-TheNewOS-Text/release/"..file) --This will make 'download' hold the contents of the file.
 if download then
-   local handle = download.readAll()
+   local code = download.readAll()
    download.close()
-   local file = fs.open(saveTo,"w")
-   file.write(handle)
+   local file = fs.open(path,"w")
+   file.write(code)
    file.close()
   else
    error()
