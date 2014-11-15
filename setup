@@ -1,14 +1,39 @@
-function downlad(url,path)
-a = http.get(url)
-b = a.readAll()
-c = fs.open(path,"w")
-c:write(b)
-c:close()
+--[[
+TheNewOS Text by ComputerCraft'sTeam
+Setup pastebin code: C9WSrRv1
+]]--
+local function get(file,path)
+local download = http.get("https://raw.github.com/computercraftsteam/ES-TheNewOS-Text/release/"..file) --This will make 'download' hold the contents of the file.
+if download then
+   local code = download.readAll()
+   download.close()
+   local file = fs.open(path,"w")
+   file.write(code)
+   file.close()
+  else
+   error()
+  end
 end
-function gbDownload(user,repo,branch,path,file)
-url = "http://raw.githubusercontent.com/"..user.."/"..repo.."/"..branch.."/"..path.."/"..file
-download(url,file)
-end
-function gDownload(path,file)
-gbDownload("computercraftsteam","ES-TheNewOS-Text","release",path,file)
-end
+
+term.clear()
+term.setCursorPos(1,1)
+print("Instalador TheNewOS Text")
+print("Copyright (C) 2014 manumanucraft")
+print("================================")
+print("Descargado y abierto el archivo /setup")
+get("startup","/startup")
+print("Descargado el archivo /startup")
+get("config/os.cfg","/config/os.cfg")
+print("Descargado el archivo /config/os.cfg")
+get("config/user.cfg","/config/user.cfg")
+write("Instalacion terminada. El ordenador se reiniciara en: ")
+sleep(1)
+write("3")
+sleep(1)
+write(", 2")
+sleep(1)
+write(", 1")
+sleep(1)
+write(", 0")
+sleep(1)
+os.reboot()

@@ -1,0 +1,40 @@
+version = "1.0a"
+w,h = term.getSize()
+adv = term.isColor()
+function draw()
+  term.clear()
+  term.setCursorPos(1,1)
+  print("TheNewOS "..version)
+  print("Copyright (c) ComputerCraft\'s Team 2014")
+  print("Ni el SO ni ComputerCraft\'s Team están afiliados a ComputerCraft")
+  for i=1,h do
+    write("=")
+  end
+  term.setCursorPos(1,5)
+end
+draw()
+cfg = fs.open("/config/user.cfg","r")
+user = cfg.readLine(1)
+user = string.sub(user,10,#user)
+cfg.close()
+if user == "" then
+  cfg = fs.open("/config/user.cfg")
+  write("Introduce tu nombre de usuario: ")
+  nick = io.read()
+  print("Escribiendo nombre de usuario en la configuracion...")
+  cfg.write("usuario: "..nick)
+  print("Nombre de usuario cambiado a "..nick)
+  cfg.close()
+end
+draw()
+print("Bienvenido a TheNewOS, "..user)
+print("Pulsa una tecla para continuar...")
+print("Pulsa la tecla F12 para cambiar tu nombre de usuario.")
+evt,key = os.pullEvent("key")
+if key==keys.f12 then
+  cfg = fs.open("/config/user.cfg","w")
+  cfg.write("usuario: ")
+  cfg.close()
+  os.reboot()
+end
+print("Aun no se le han anadido mas cosas al SO")
