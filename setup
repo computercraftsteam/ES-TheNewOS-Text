@@ -3,7 +3,7 @@ TheNewOS Text by ComputerCraft'sTeam
 Setup pastebin code: C9WSrRv1
 ]]--
 local function get(file,path)
-local download = http.get("https://raw.github.com/computercraftsteam/ES-TheNewOS-Text/release/"..file) 
+local download = http.get("https://raw.githubusercontent.com/computercraftsteam/ES-TheNewOS-Text/release/"..file) 
 if download then
    local code = download.readAll()
    download.close()
