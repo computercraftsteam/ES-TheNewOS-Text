@@ -3,7 +3,7 @@ TheNewOS Text by ComputerCraft'sTeam
 Setup pastebin code: C9WSrRv1
 ]]--
 local function get(file,path)
-local download = http.get("https://raw.github.com/computercraftsteam/ES-TheNewOS-Text/release/"..file) --This will make 'download' hold the contents of the file.
+local download = http.get("https://raw.github.com/computercraftsteam/ES-TheNewOS-Text/release/"..file) 
 if download then
    local code = download.readAll()
    download.close()
@@ -23,9 +23,12 @@ print("================================")
 print("Descargado y abierto el archivo /setup")
 get("startup","/startup")
 print("Descargado el archivo /startup")
-get("config/os.cfg","/config/os.cfg")
+shell.run("mkdir config")
+shell.run("cd config")
+get("config/os.cfg","os.cfg")
 print("Descargado el archivo /config/os.cfg")
-get("config/user.cfg","/config/user.cfg")
+get("config/user.cfg","user.cfg")
+print("Descargado el archivo /config/user.cfg")
 write("Instalacion terminada. El ordenador se reiniciara en: ")
 sleep(1)
 write("3")
